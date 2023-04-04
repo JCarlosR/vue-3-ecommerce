@@ -8,14 +8,14 @@ export default {
         ProductCard,
         Cart
     },
+    props: ['details'],
     data() {
         return {
             products: <Array<Product>>[
                 {name: 'Silla', price: 56, id: 5},
                 {name: 'Monitor', price: 450, id: 7},
                 {name: 'Micrófono', price: 20, id: 12}
-            ],
-            details: <Array<CartDetail>>[]
+            ]
         }
     },
     methods: {
