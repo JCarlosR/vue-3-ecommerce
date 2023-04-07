@@ -14,22 +14,16 @@ export default {
             products: <Array<Product>>[
                 {name: 'Silla', price: 56, id: 5},
                 {name: 'Monitor', price: 450, id: 7},
+                {name: 'Micrófono', price: 20, id: 12},
+                {name: 'Silla', price: 56, id: 5},
+                {name: 'Monitor', price: 450, id: 7},
                 {name: 'Micrófono', price: 20, id: 12}
             ]
         }
     },
     methods: {
         onProductAdded(productId: number) {
-            const detailFound = this.details.find(d => d.productId === productId);
 
-            if (detailFound) {
-                detailFound.quantity += 1;
-            } else {
-                this.details.push({
-                    productId,
-                    quantity: 1
-                });
-            }
         }
     }
 }
@@ -43,6 +37,4 @@ export default {
                 @addProduct="onProductAdded(p.id)" />
         </v-col>
     </v-row>
-
-    <Cart :details="details" />
 </template>
