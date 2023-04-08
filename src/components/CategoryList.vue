@@ -4,13 +4,13 @@ import type { Category } from '@/model/types';
 export default {
     data() {
         return {
-            categories: <Array<Category>>[{
+            categories: [{
                 id: 1,
                 name: 'Technology'
             }, {
                 id: 2,
                 name: 'Toys'
-            }]
+            }] as Category[]
         };
     }
 }

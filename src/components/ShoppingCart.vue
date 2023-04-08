@@ -1,6 +1,5 @@
 <script lang="ts">
 import { useCartStore } from '@/stores/cart';
-import { RouterLink } from 'vue-router';
 
 export default {
     methods: {
@@ -33,7 +32,9 @@ export default {
 
         <v-card-text>
             <v-list v-if="details.length > 0">
-                <v-list-item v-for="detail in details" :value="detail.productId">
+                <v-list-item 
+                    v-for="detail in details" 
+                    :key="detail.productId">
                     <v-list-item-title>
                         Product {{ detail.productId }} 
 
