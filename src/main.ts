@@ -13,6 +13,9 @@ import { createPinia } from 'pinia'
 // Vue Router
 import router from './router'
 
+// Icons
+import '@mdi/font/css/materialdesignicons.css' 
+
 const vuetify = createVuetify({
   components,
   directives,

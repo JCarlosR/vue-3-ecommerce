@@ -14,7 +14,7 @@ export default {
 
 <template>
     <v-app-bar flat>
-      <v-container class="fill-height d-flex align-center">
+      <v-container class="fill-height d-flex">
         <v-avatar
           class="me-10 ms-4"
           color="grey-darken-1"
@@ -22,21 +22,21 @@ export default {
         ></v-avatar>
 
         <RouterLink to="/" custom v-slot="{navigate}">
-          <v-btn :active="$route.name === 'home'" variant="text" @click="navigate">
+          <v-btn prepend-icon="mdi-home-variant" :active="$route.name === 'home'" variant="text" @click="navigate">
             Home
           </v-btn>
         </RouterLink>
 
         <RouterLink to="/cart" custom v-slot="{navigate}">
           <v-badge :content="itemsCount" :model-value="itemsCount > 0" color="orange-lighten-2">
-            <v-btn :active="$route.name === 'cart'" variant="text" @click="navigate">
+            <v-btn prepend-icon="mdi-cart" :active="$route.name === 'cart'" variant="text" @click="navigate">
               Cart
             </v-btn>
           </v-badge>
         </RouterLink>
 
         <RouterLink to="/about" custom v-slot="{navigate}">
-          <v-btn :active="$route.name === 'about'" variant="text" @click="navigate">
+          <v-btn prepend-icon="mdi-information" :active="$route.name === 'about'" variant="text" @click="navigate">
             About
           </v-btn>
         </RouterLink>
