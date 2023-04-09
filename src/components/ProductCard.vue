@@ -13,7 +13,13 @@ export default {
     methods: {
         onAddButtonClick() {
             const cartStore = useCartStore();
-            cartStore.addProduct(this.product.id);
+            cartStore.addProduct(this.product);
+        }
+    },
+    computed: {
+        productImageUrl() {
+            return this.product.image 
+                ?? 'https://cdn.vuetifyjs.com/images/cards/sunshine.jpg';
         }
     }
 }
@@ -22,7 +28,7 @@ export default {
 <template>
     <v-card>
         <v-img
-            src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+            :src="productImageUrl"
             height="200px"
             cover />
 
