@@ -1,13 +1,28 @@
 <script lang="ts">
-  import ProductList from '@/components/ProductList.vue';
-  import CategoryList from '@/components/CategoryList.vue';
+import ProductList from '@/components/ProductList.vue';
+import CategoryList from '@/components/CategoryList.vue';
+import { useProductsStore } from '@/stores/products';
 
-  export default {
-    components: {
-      ProductList,
-      CategoryList
-    }
-  }  
+function updateCategoryFromRouteParams(categoryIdParam: string|string[]) {
+  const productsStore = useProductsStore();
+  const categoryId = Number(categoryIdParam);
+  productsStore.selectCategory(categoryId);
+}
+
+export default {
+  components: {
+    ProductList,
+    CategoryList
+  },
+  beforeRouteEnter(to, from) {
+      console.log('beforeRouteEnter', to.params);
+      updateCategoryFromRouteParams(to.params.categoryId);
+  },
+  beforeRouteUpdate(to, from) {
+      console.log('beforeRouteUpdate', to.params);
+      updateCategoryFromRouteParams(to.params.categoryId);
+  }
+}  
 </script>
 
 <template>
