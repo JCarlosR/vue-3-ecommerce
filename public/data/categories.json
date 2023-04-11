@@ -1,0 +1,9 @@
+[{
+    "id": 1,
+    "name": "Oficina",
+    "description": "Productos para tu oficina."
+}, {
+    "id": 2,
+    "name": "Computadora",
+    "description": "Accesorios para computadora."
+}]

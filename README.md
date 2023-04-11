@@ -12,6 +12,7 @@
 
 ### Category
 
+- id
 - name
 - description
 
